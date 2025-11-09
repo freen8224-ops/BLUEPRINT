@@ -2,23 +2,22 @@
 # =========================================================
 # 🌈 NOVA AUTO INSTALLER for Pterodactyl + Reviactyl Theme
 # =========================================================
-# Made with ❤️ by Valayar Hosting
+# Made with ❤️ by Valayar Hosting (freen8224-ops)
 # =========================================================
 
-# Install color tools if not installed
-apt install -y figlet lolcat > /dev/null 2>&1
+# --- Auto install figlet & lolcat if missing ---
+echo "🧩 Checking required packages..."
+apt update -y > /dev/null 2>&1
+apt install -y figlet ruby curl wget unzip git gnupg zip ca-certificates > /dev/null 2>&1
+gem install lolcat > /dev/null 2>&1
 
-# Clear screen
+# --- Display NOVA banner ---
 clear
-
-# Fancy rainbow banner
 figlet "NOVA" | lolcat
 echo "=========================================================" | lolcat
 echo "🚀 Pterodactyl + Reviactyl + Blueprint Auto Installer 🌈" | lolcat
 echo "=========================================================" | lolcat
 echo ""
-
-# Menu options
 echo "Select an option:" | lolcat
 echo "  [1] 🌌 Install Reviactyl Theme" | lolcat
 echo "  [2] 🧩 Install Blueprint Framework" | lolcat
